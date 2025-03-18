@@ -19,6 +19,10 @@ namespace CLICalculatorApp
                 "-" => new Subtraction(),
                 "*" => new Multiplication(),
                 "/" => new Division(),
+                "%" => new Modulo(),
+                "!" => new Factorial(),
+                "sqrt" => new SquareRoot(),
+                "^" => new Exponentiation(),
                 _ => throw new InvalidOperationException("Invalid operation")
             };
         }

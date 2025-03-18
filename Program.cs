@@ -14,6 +14,10 @@ namespace CLICalculatorApp
                 Console.WriteLine("2.  Subtraction(-)");
                 Console.WriteLine("3.  Multiplication(*)");
                 Console.WriteLine("4.  Division(/)");
+                Console.WriteLine("5.  Modulo(%)");
+                Console.WriteLine("6.  Exponentiation(^)");
+                Console.WriteLine("7.  Square Root (sqrt)");
+                Console.WriteLine("8.  Factorial");
 
                 string choice = Console.ReadLine();
                 switch (choice)
@@ -30,8 +34,17 @@ namespace CLICalculatorApp
                     case "4":
                         PerformBinaryOperation("/");
                         break;
+                    case "5":
+                        PerformBinaryOperation("%");
+                        break;
                     case "6":
                         PerformBinaryOperation("^");
+                        break;
+                    case "7":
+                        PerformUnaryOperation("sqrt");
+                        break;
+                    case "8":
+                        PerformUnaryOperation("!");
                         break;
 
                     default:
@@ -66,6 +79,27 @@ namespace CLICalculatorApp
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Unexpected error {ex.Message}");
+                }
+            }
+            static void PerformUnaryOperation(string symbol)
+            {
+                try
+                {
+                    IOperation operation = OperationsFactory.GetOperation(symbol);
+
+                    Console.Write("Enter the number: ");
+                    double num = Convert.ToDouble(Console.ReadLine());
+
+                    double result = operation.Execute(num);
+                    Console.WriteLine($"Result: {result}");
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine($"❌ Error: Invalid input! Please enter a valid number. ({ex.Message})");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"❌ Unexpected error: {ex.Message}");
                 }
             }
         }
