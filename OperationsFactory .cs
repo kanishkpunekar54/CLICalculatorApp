@@ -23,6 +23,9 @@ namespace CLICalculatorApp
                 "!" => new Factorial(),
                 "sqrt" => new SquareRoot(),
                 "^" => new Exponentiation(),
+                "sin" => new Sine(),
+                "cos" => new Cosine(),
+                "tan" => new Tangent(),
                 _ => throw new InvalidOperationException("Invalid operation")
             };
         }

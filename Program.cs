@@ -18,6 +18,9 @@ namespace CLICalculatorApp
                 Console.WriteLine("6.  Exponentiation(^)");
                 Console.WriteLine("7.  Square Root (sqrt)");
                 Console.WriteLine("8.  Factorial");
+                Console.WriteLine("9.  Sine (sin)");
+                Console.WriteLine("10. Cosine (cos)");
+                Console.WriteLine("11. Tangent (tan)");
 
                 string choice = Console.ReadLine();
                 switch (choice)
@@ -46,7 +49,15 @@ namespace CLICalculatorApp
                     case "8":
                         PerformUnaryOperation("!");
                         break;
-
+                    case "9":
+                        PerformUnaryOperation("sin");
+                        break;
+                    case "10":
+                        PerformUnaryOperation("cos");
+                        break;
+                    case "11":
+                        PerformUnaryOperation("tan");
+                        break;
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;
