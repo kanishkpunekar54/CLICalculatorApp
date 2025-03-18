@@ -21,6 +21,9 @@ namespace CLICalculatorApp
                 Console.WriteLine("9.  Sine (sin)");
                 Console.WriteLine("10. Cosine (cos)");
                 Console.WriteLine("11. Tangent (tan)");
+                Console.WriteLine("12. Logarithm10 (log)");
+                Console.WriteLine("13. Natural Logarithm (ln)");
+                Console.WriteLine("14. Custom base Logarithm (log)");
 
                 string choice = Console.ReadLine();
                 switch (choice)
@@ -57,6 +60,15 @@ namespace CLICalculatorApp
                         break;
                     case "11":
                         PerformUnaryOperation("tan");
+                        break;
+                    case "12":
+                        PerformUnaryOperation("log");
+                        break;
+                    case "13":
+                        PerformUnaryOperation("ln");
+                        break;
+                    case "14":
+                        PerformBinaryOperation("log");
                         break;
                     default:
                         Console.WriteLine("Invalid Choice");

@@ -26,6 +26,8 @@ namespace CLICalculatorApp
                 "sin" => new Sine(),
                 "cos" => new Cosine(),
                 "tan" => new Tangent(),
+                "log" => new Logarithm(),
+                "ln" => new NaturalLogarithm(),
                 _ => throw new InvalidOperationException("Invalid operation")
             };
         }
