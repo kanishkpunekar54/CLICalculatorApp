@@ -1,4 +1,5 @@
 ﻿using CLICalculatorApp.Operations;
+using CLICalculatorApp.Strategies;
 
 namespace CLICalculatorApp
 {
@@ -24,6 +25,8 @@ namespace CLICalculatorApp
                 Console.WriteLine("12. Logarithm10 (log)");
                 Console.WriteLine("13. Natural Logarithm (ln)");
                 Console.WriteLine("14. Custom base Logarithm (log)");
+                Console.WriteLine("15. Complex Expression");
+
 
                 string choice = Console.ReadLine();
                 switch (choice)
@@ -69,6 +72,9 @@ namespace CLICalculatorApp
                         break;
                     case "14":
                         PerformBinaryOperation("log");
+                        break;
+                    case "15":
+                        PerformComplexCalculation();
                         break;
                     default:
                         Console.WriteLine("Invalid Choice");
@@ -124,6 +130,23 @@ namespace CLICalculatorApp
                 {
                     Console.WriteLine($"❌ Unexpected error: {ex.Message}");
                 }
+            }
+            static void PerformComplexCalculation()
+            {
+                Console.WriteLine("Enter the expression (eg.,5+7+6*9/4)");
+                string expression = Console.ReadLine();
+                ICalculatorStrategy strategy = new SimpleCalculatorStrategy();
+                try
+                {
+                    double result = strategy.Calculate(expression);
+                    Console.WriteLine($"Result: {result}");
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+
             }
         }
     }
