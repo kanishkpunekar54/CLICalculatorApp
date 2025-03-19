@@ -8,14 +8,14 @@ namespace CLICalculatorApp.Operations
 {
     public class Logarithm : IOperation
     {
-        double IOperation.Execute(double a, double b)
+        public double Execute(double a, double b)
         {
             if (a <= 0 || b <= 0 || b == 1)
                 throw new ArgumentException("Logarithm of a non-positive number is not allowed");
             return Math.Log((double)a, (double)b);
         }
-
-        double IOperation.Execute(double a)
+        
+        public double Execute(double a)
         {
             if (a <= 0)
             {

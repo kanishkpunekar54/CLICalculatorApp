@@ -8,12 +8,12 @@ namespace CLICalculatorApp.Operations
 {
     public class NaturalLogarithm : IOperation
     {
-        double IOperation.Execute(double a, double b)
+        public double Execute(double a, double b)
         {
             throw new NotImplementedException("Natural logarithm has only one input");
         }
 
-        double IOperation.Execute(double a)
+        public double Execute(double a)
         {
             if (a <= 0)
             {

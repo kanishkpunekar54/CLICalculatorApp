@@ -8,12 +8,12 @@ namespace CLICalculatorApp.Operations
 {
     public class Tangent : IOperation
     {
-        double IOperation.Execute(double a, double b)
+        public double Execute(double a, double b)
         {
             throw new NotImplementedException("Tangent requires only one input ");
         }
 
-        double IOperation.Execute(double a)
+        public double Execute(double a)
         {
             return Math.Tan(a);
         }
