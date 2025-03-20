@@ -14,7 +14,8 @@ namespace CLICalculatorApp.Operations
         }
         public double Execute(double a)
         {
-            return Math.Cos(a);
+            double radians = a * (Math.PI / 180);
+            return Math.Cos(radians);
         }
     }
 }
